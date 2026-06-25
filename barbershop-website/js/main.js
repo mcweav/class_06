@@ -60,8 +60,36 @@ const services = [
  {
     id: 4,
     title: "Fade & Style",
-    description: 
+    description: "A clean fade with finishing detail for a sharp, modern look.",
+    image: "assets/images/feature-2.jpg",
+    alt: "Fade Haircut",
+    price: 35,
+    popular: false,
+    details: [
+        "Style consultation before clipper work begins.",
+        "Fade blended to your prefered level and finish.",
+        "Detailing around temples, neckline, and beard area if needed.",
+        "Scissors and clipper-over-comb may be used for texture.",
+        "Styling product added to complete the final look."
+    ]
+ },
+ {
+    id: 5,
+    title: "Kids Cut",
+    description: "Clean, comfortable haircut service for younger clients.",
+    image: "assets/images/feature-1.jpg",
+    alt: "Kids haircut",
+    price: 20,
+    popular: false,
+    details: [
+        "Simple consultation with child and parent if needed.",
+        "Age-appropriate haircut with comfort in mind.",
+        "Careful clipper and scissor work for a clean finish.",
+        "Scalp cleaned and checked for even consistency.",
+        "Moisturizing scalp product applied after the shave."
+    ]
  }
+];
 
 // Render Features using forEach
 
