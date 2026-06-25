@@ -34,25 +34,48 @@ const services = [
 // Render Features using forEach
 
 const renderFeatures = () => {
-    if(!featureGrid){
-        return; 
-    };
+    if (!featureGrid) return;
 
-    //use forEach on the services array
-    services.forEach((service)=>{
-        //to create our feauture-card blueprint (HTML)
-        const card = document.createElement("article");
-        card.classList.add("feature-card");//class/css
-        card.innerHTML = `
-            <img src="${service.img}" alt="${service.title}" class="feature-img" />
+const cardsHTML = services.map((service) => {
+     let badgeHTML = "";
+
+    if (service.popular) {
+        badgeHTML = `<p class="service-badge">Popular Choice</p>`;
+    } else {
+        badgeHTML = `<p class="service-badge alt-badge">Barber Favorite</p>`;
+ }
+
+    return `
+        <article class="feature-card">
+            <img
+                src="${service.image}"
+                alt="${service.alt}"
+                class="feature-img"
+            />
+
             <h3 class="feature-title">${service.title}</h3>
-            <p class="feature-text">${service.text}</p>
-        `;
-        featureGrid.appendChild(card)      
-    })
-};
-renderFeatures()
 
+            <p class="feature-text">${service.description}</p>
+
+            ${badgeHTML}
+
+            <p class="service-price">$${service.price}</p>
+
+            <div class="service-actions">
+                <button
+                    class="service-details-btn"
+                    type="button"
+                    data-service-id="${service.id}"
+                >
+                    View Details
+                </button>
+            </div>
+        </article>
+    `;
+ }).join("");
+ 
+ featureGrid.innerHTML = cardsHTML;
+};
 
 //Navigation Data(array of objects)
 const navLinks = [
