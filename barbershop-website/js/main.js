@@ -53,7 +53,7 @@ const services = [
     id: 3,
     title: "Straight Razor Shave",
     description: "Hot towel treatment with a smooth traditional shave.",
-    image: "Straight razor shave",
+    image: "assets/images/feature-3.jpg",
     price: 30,
     popular: true,
     details: [
@@ -323,9 +323,24 @@ const closeServiceModal = () => {
  document.body.style.overflow = "";
 };
 
+//Modal close events
+if(serviceModalClose){
+    serviceModalClose.addEventListener("click", closeServiceModal);
+}
+
+if(serviceModalOverlay){
+    serviceModalOverlay.addEventListener("click", closeServiceModal);
+}
+
+document.addEventListener("keydown", (event) => {
+    if(event.key === "Escape"){
+        closeServiceModal();
+    }
+});
 
 //Footer year auto-fills
 //Hamburger Menu opens/closes (works with your mobile-menu.is-open CSS)
 //CTA buttons do something visible(updates hero heading)
 
 window.addEventListener("scroll", handleHeaderOnScroll);
+handleHeaderOnScroll();
