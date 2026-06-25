@@ -10,26 +10,58 @@ const siteheader = document.querySelector(".site-header");
 
 
 const services = [
-    {
-        title: "Classic Haircut",
-        text: "Timeless cuts with modern precision tailored to your style.",
-        img: "assets/images/feature-1.jpg"
-    
-    },
-    { 
-
-        title: "Beard Trim",
-        text: "Shape and line-up your beard for a clean, sharp finish.",
-        img: "assets/images/feature-2.jpg"
-    },
-    { 
-
-        title: "Kids Cut",
-        text: "Half Price Kids Haircut",
-        img: "assets/images/feature-3.jpg"
-    },
-
-];
+ {
+    id: 1,
+    title: "Classic Haircut",
+    description: "Timeless cuts with modern precision tailored to your style.",
+    image: "assets/images/feature-1.jpg",
+    alt: "Classic haircut",
+    price: 25,
+    popular: true,
+    details: [
+        "Consultation with your barber before the cut begins.",
+        "Hair sectioning and shape-up based on your preferred style.",
+        "Professional clippers, trimmers, and shears used for precsision.",
+        "Neckline cleanup and finishing touches included.",
+        "Light styling product applied for a clean final look."
+    ]
+ },
+ {
+    id: 2,
+    title: "Beard Trim",
+    description: "Shape and line-up your beard for a clean, sharp finish.",
+    image: "assets/images/feature-2.jpg",
+    alt: "Beard trim",
+    price: 15,
+    popular: false,
+    details: [
+        "Beard assessment and shaping based on face structure.",
+        "Line-up around cheeks, jawline, and neckline.",
+        "Trimmers and detail tools used for crisp edges.",
+        "Conditioning beard product may be applied for softness.",
+        "Final symetry check for a polished finish."
+    ]
+ },
+ {
+    id: 3,
+    title: "Straight Razor Shave",
+    description: "Hot towel treatment with a smooth traditional shave.",
+    image: "Straight razor shave",
+    price: 30,
+    popular: true,
+    details: [
+        "Hot towel prep to soften facial hair and open pores.",
+        "Premium shaving cream or lather applied to protect the skin.",
+        "Straight razor shave performed with careful detailing.",
+        "Second hot towel may be used for comfort and cleanup.",
+        "Aftershave or soothing skin product applied after service."
+    ]
+ },
+ {
+    id: 4,
+    title: "Fade & Style",
+    description: 
+ }
 
 // Render Features using forEach
 
