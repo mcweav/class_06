@@ -367,7 +367,7 @@ body {
 }
 
 .service-modal-close:hover {
-    background_color: rgba(58, 45, 40, 0.08);
+    background-color: rgba(58, 45, 40, 0.08);
 }
 
 .service-modal-list {
