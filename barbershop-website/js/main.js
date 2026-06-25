@@ -147,6 +147,29 @@ const updateHeadText = (newText) => {
 
 setCurrentYear();
 
+const openServiceModal = (serviceId) => {
+ if (
+     !serviceModal ||
+     !serviceModalTitle ||
+     !serviceModalPrice ||
+     !serviceModalList
+ ) {
+     return;
+ }
+ const selectedService = services.find((service) => {
+     return service.id === Number(serviceId);
+ });
+     if (!selectedService) return;
+     serviceModalTitle.textContent = selectedService.title;
+     serviceModalPrice.textContent = `$${selectedService.price}`;
+     serviceModalList.innerHTML = selectedService.details.map((detail) => {
+     return `<li>${detail}</li>`;
+ }).join("");
+     serviceModal.classList.add("is-open");
+     serviceModal.setAttribute("aria-hidden", "false");
+     document.body.style.overflow = "hidden";
+};
+
 //Event Listeners
 //Hamburger menu toggle
 if(menuBtn){
