@@ -8,6 +8,13 @@ const heading = document.getElementById("heroHeading");
 const featureGrid = document.getElementById("featureGrid")
 const siteheader = document.querySelector(".site-header");
 
+// ----- Modal Elements -----
+const serviceModal = document.getElementById("serviceModal");
+const serviceModalOverlay = document.getElementById("serviceModalOverlay");
+const serviceModalClose = document.getElementById("serviceModalClose");
+const serviceModalTitle = document.getElementById("serviceModalTitle");
+const serviceModalPrice = document.getElementById("serviceModalPrice");
+const serviceModalList = document.getElementById("serviceModalList");
 
 const services = [
  {
@@ -253,6 +260,10 @@ const openServiceModal = (serviceId) => {
      document.body.style.overflow = "hidden";
 };
 
+renderNavigation();
+renderFeatures();
+setCurrentYear();
+
 //Event Listeners
 //Hamburger menu toggle
 if(menuBtn){
@@ -294,6 +305,24 @@ if(callBtn){
         };
     });
 };
+
+if (featureGrid) {
+ featureGrid.addEventListener("click", (event) => {
+ const clickedButton = event.target.closest(".service-details-btn");
+ if (!clickedButton) return;
+ const serviceId = clickedButton.dataset.serviceId;
+ openServiceModal(serviceId);
+ });
+}
+
+
+const closeServiceModal = () => {
+ if (!serviceModal) return;
+ serviceModal.classList.remove("is-open");
+ serviceModal.setAttribute("aria-hidden", "true");
+ document.body.style.overflow = "";
+};
+
 
 //Footer year auto-fills
 //Hamburger Menu opens/closes (works with your mobile-menu.is-open CSS)
